@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <!-- Book Cards -->
+    <div class="col-lg-9 col-md-6 col-sm-12 main">
+      <h1 class="text-center border-bottom p-2 mb-3">Welome to World of Books</h1>
+      <div class="row row-cols-lg-3 row-cols-md-1 row-cols-sm-1">
+        <app-book-card *ngFor="let book of books" [book]="book" class="col mb-4"
+          (bookEvent)="onAddBookToCartEventEmmission($event)">
+        </app-book-card>
+      </div>
+    </div>
+    <!-- Cart Product Cards -->
+    <div class="col-lg-3 col-md-2 col-sm-1 cart">
+      <h1 class="text-center border-bottom p-2">Cart</h1>
+      <ul>
+        <li class="list-group-item mb-2">
+          <app-cart-card *ngFor="let cartObj of cart" [cart]="cartObj" class="col"
+            (reduceEvent)="reduceQuantity($event)" (increaseEvent)="increaseQuantity($event)"
+            (removeEvent)="removeBook($event)"></app-cart-card>
+        </li>
+        <li *ngIf="total>0" class="list-group-item mb-2">Total Amount: {{total}}</li>
+        <li *ngIf="total==0" class="list-group-item mb-2"><h3>Your cart is empty</h3></li>
+      </ul>
+    </div>
+  </div>
+</div>

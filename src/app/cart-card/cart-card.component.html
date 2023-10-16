@@ -1,0 +1,14 @@
+<div class="d-flex justify-content-between   mb-2 border-bottom">
+    <div>{{cart?.book?.title}}</div>
+    <div class="d-flex justify-content-end">
+    <div class="d-flex justify-content-between align-items-center me-2 border">
+        <i class="fa-solid fa-minus" (click)="reduceQuantity()" style="color: #050505;"></i>
+        <h5 class="ms-2 me-2">{{cart?.quantity}}</h5>
+        <i class="fa-solid fa-plus"  (click)="increaseQuantity()"  style="color: #050505;"></i>
+    </div>
+    <div>
+        <button (click)="removeBook()" class="btn" ><i class="fa-solid fa-circle-xmark"></i></button>
+    </div>
+    </div>
+</div>
+

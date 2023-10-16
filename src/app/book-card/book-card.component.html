@@ -1,0 +1,10 @@
+<div class="card" style="max-height:100rem">
+    <img src={{book?.image}} class="card-img-top" alt="..." style="max-height:18rem">
+    <div class="card-body">
+      <h5 class="card-title">{{book?.title}}</h5>
+      <h6 class="card-text">Author: {{book?.title|slice:0:20}}</h6>
+      <p class="card-text">{{book?.summary|slice:0:50}}</p>
+      <h6 class="card-text">MPR: ${{book?.price?.value}}</h6>
+      <a href="#" class="btn" style="background-color: #9F6976;color:white" (click)="addBookToCart()">Add to Cart</a>
+    </div>
+  </div>
